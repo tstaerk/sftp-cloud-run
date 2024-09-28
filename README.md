@@ -29,36 +29,22 @@ This repository contains the necessary files to deploy a secure SFTP server usin
 
 ## Quick Start
 ### SSH Key Configuration  
-Generate SSH Key: If you do not already have an SSH key pair, you can generate one using the following command:
+Generate SSH Key: If you do not already have an SSH key pair (~/.ssh/id_rsa and ~/.ssh/id_rsa.pub), you can generate one using the following command:
 ```bash
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com" -f $HOME/.ssh/docker_rsa
+ssh-keygen
 ```
 
-Ensure your private key (~/.ssh/docker_rsa) is kept secure with the appropriate permissions:
-```bash
-chmod 600 ~/.ssh/docker_rsa
-```
-
-Load your SSH key into the SSH agent by running:
-```bash
-ssh-add ~/.ssh/docker_rsa
-```
+Replace the public ssh key in the Dockerfile by your ~/.ssh/id_rsa.pub
 
 ### Clone this repository:
 ```bash
-git clone https://github.com/tshenolo/docker-sftp-server-with-sshkey.git
+git clone https://github.com/tstaerk/sftp-cloud-run
 ```
 
 Change your current working directory to the newly cloned repository:
 ```bash
-cd docker-sftp-server-with-sshkey
+cd sftp-cloud-run
 ```
-
-To ensure SSH key-based authentication for your SFTP server, place your SSH public key into the working directory:
-```bash
-cp $HOME/.ssh/docker_rsa.pub .
-```
-
 
 ### Build the Docker image:
 ```bash
