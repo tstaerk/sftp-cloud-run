@@ -16,8 +16,8 @@ RUN useradd -m -d /home/sftpuser -s /usr/sbin/nologin sftpuser && \
     chown sftpuser:sftpuser /home/sftpuser/.ssh && \
     chmod 700 /home/sftpuser/.ssh
 
-# Copy the public key
-# Ensure you replace 'docker_rsa.pub' with your actual public key file name
+# Put the public key
+# Replace with your public key
 RUN <<EOF cat >>/home/sftpuser/.ssh/authorized_keys
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDiLjVdEPdCFZcWdROCEGFOA8ABlWXH4jxNslyFSOJ78Ug+OSCrZPu6Us+CPA6MkcZ439QivYYbqebzAnBvJSFoKqChovJGQ4ceYdLZlQVGs6U6yFgF6yr6IlobcF6Czww0fSXjzul4pXx0nNt9pd0BBMzKv7szUCQDMxPBKB35J/DZU5ArkeNhvGOpHYc774hDa2tdZVql3gM5aHXIZH4ABlVqjiIWOXSn03X5ks9w5ZtTgtOJ365uivWdCOhMtDjmSYiHJIbilioxwCe+7ZOy41MF+jfw+Li1Ru52pnC21gboHnJmSl+mkRaQl5HGqdZFIk0mZOHN8BfYllA5FvyQemdgy80HohCWUPTDDf6Gqjj/BRLe1Ab/KYuKNhKToR0BCQCALQAsFheqDcPRaimy9ADOxovEjIEwWDyl6hLE9oU/bmL5pxL5IqmILR2NLgLmc5mzSMsX4TrmIUB0QQ5oRfJANGNCI+diPNWjTmL/fc87zjlcS/Oz6HxS5F7rgRc= thorsten@tweedleburg
 EOF
